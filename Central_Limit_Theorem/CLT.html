@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link href="./bootstrap.min.css" rel="stylesheet">
+
+		<style>
+			.stats_pane_number {
+				padding-left: 20px;
+			}
+
+			#stats_pane_dice {
+				visibility: hidden;
+			}
+            
+            #stats_pane_coins {
+				visibility: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class='container'>
+
+			<h1> Central Limit Theorem Demonstration </h1>
+
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+  				<li class="active"><a href="#dice" role="tab" data-toggle="tab">Rolling Dice</a></li>
+  				<li><a href="#coin" role="tab" data-toggle="tab">Flipping a Coin</a></li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+  				<div class="tab-pane active" id="dice">
+
+  					<div class='col-lg-6'>
+
+  						<div id='histogram_pane_dice'>
+  						</div> <!-- Histogram pane -->
+
+  					</div> <!-- histogram column -->
+
+  					<div class='col-lg-4'>
+  						<p>
+  							Number of dice: <input type='number' id='number_of_dice' value='1'></input>
+  						</p>
+
+  						<p> 
+  							Number of trials: <input type='number' id='number_of_trials_dice' value='10000'></input>
+  						</p>
+        
+                        <p> 
+  						    <button class='btn-primary' id='single_trial_button_dice'>Generate single example trial</button>
+  						</p>
+
+
+  						<p>
+  							<button class='btn-primary' id='multi_trial_button_dice'>Plot histogram of multiple trials</button>
+  						</p>
+
+  						<p>
+  							<button class='btn-danger' id='clear_button_dice'>Clear</button>
+  						</p>
+
+  						<div id='stats_pane_dice'>
+
+  							<table>
+  								<tr>
+  									<td>Mean</td>  
+  									<td id='mean_field_dice' class='stats_pane_number'>0</td>
+  								</tr>
+  								<tr>
+  									<td>Standard deviation</td>  
+  									<td id='std_dev_field_dice' class='stats_pane_number'>0</td>
+  								</tr>
+  								<tr>
+  									<td>Minimum</td>  
+  									<td id='min_field_dice' class='stats_pane_number'>0</td>
+  								</tr>
+  								<tr>
+  									<td>Maximum</td>  
+  									<td id='max_field_dice' class='stats_pane_number'>0</td>
+  								</tr>
+
+  							</table>
+
+  						</div>
+
+  					</div> <!-- control column -->
+
+  				</div> <!-- Dice rolling pane -->
+
+
+  				<div class="tab-pane" id="coin">
+  					<div class='col-lg-6'>
+                            
+  						<div id='histogram_pane_coins'>
+  						</div> <!-- Histogram pane -->
+
+  					</div> <!-- histogram column -->
+
+  					<div class='col-lg-4'>
+
+                        <p>
+  							Number of coins: <input type='number' id='number_of_coins' value='1'></input>
+  						</p>
+
+  						<p> 
+  							Number of trials: <input type='number' id='number_of_trials_coins' value='10000'></input>
+  						</p>
+
+  						<p> 
+  							Probability of heads: <input type='number' id='prob_of_heads' value='.50'></input>
+  						</p>
+
+  						<p> 
+  						    <button class='btn-primary' id='single_trial_button_coins'>Generate single example trial</button>
+  						</p>
+
+  						<p>
+  							<button class='btn-primary' id='multi_trial_button_coins'>Plot histogram of multiple trials</button>
+  						</p>
+
+  						<p>
+  							<button class='btn-danger' id='clear_button_coins'>Clear</button>
+  						</p>
+
+  						<div id='stats_pane_coins'>
+
+  							<table>
+  								<tr>
+  									<td>Mean</td>  
+  									<td id='mean_field_coins' class='stats_pane_number'>0</td>
+  								</tr>
+  								<tr>
+  									<td>Standard deviation</td>  
+  									<td id='std_dev_field_coins' class='stats_pane_number'>0</td>
+  								</tr>
+  								<tr>
+  									<td>Minimum</td>  
+  									<td id='min_field_coins' class='stats_pane_number'>0</td>
+  								</tr>
+  								<tr>
+  									<td>Maximum</td>  
+  									<td id='max_field_coins' class='stats_pane_number'>0</td>
+  								</tr>
+
+  							</table>
+
+  						</div>
+
+  					</div> <!-- control pane -->
+  				</div>
+			</div> <!-- tab content pane -->
+
+		</div> <!-- container -->
+
+		<!-- JQuery -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    	
+    	<!-- Bootstrap -->
+    	<script src="./bootstrap.min.js"></script>
+
+    	<!-- Highcharts for histograms -->
+    	<script src="http://code.highcharts.com/highcharts.js"></script>
+
+    	<!-- gRaphael for histograms
+    	<script type="text/javascript" src='./raphael-min.js'></script>
+    	<script type="text/javascript" src='./g.raphael-min.js'></script>
+    	<script type="text/javascript" src='./g.bar-min.js'></script>
+        -->
+
+    	<!-- Control script -->
+    	<script src='./CLT.js'> </script>
+
+	</body>
+
+</html>
